@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.uniportal.shared.api.controller.BaseController;
 import br.com.uniportal.shared.api.response.ApiReturn;
 
-import br.com.uniportal.bussiness.Authentication.entity.AuthenticatedUser;
-import br.com.uniportal.bussiness.Authentication.entity.Authentication;
-import br.com.uniportal.bussiness.Authentication.entity.control.AuthenticationService;
+import br.com.uniportal.bussiness.authentication.entity.AuthenticatedUser;
+import br.com.uniportal.bussiness.authentication.entity.Authentication;
+import br.com.uniportal.bussiness.authentication.entity.control.AuthenticationService;
 
 
 @RestController
@@ -30,7 +30,7 @@ public class AuthenticationController extends BaseController {
 
     @PostMapping()
     public CompletableFuture<ApiReturn<AuthenticatedUser>> authenticate(@RequestBody Authentication authentication) { 
-        System.out.println(new AuthenticatedUser(UUID.randomUUID(), "victor", "victorjsantos").toString());
-        return asyncResultOf(() -> new AuthenticatedUser(UUID.randomUUID(), "victor", "victorjsantos"));
+        AuthenticatedUser authenticatedUser = this.authenticationService.authenticate(authentication);
+        return asyncResultOf(() -> authenticatedUser);
     }
 }
