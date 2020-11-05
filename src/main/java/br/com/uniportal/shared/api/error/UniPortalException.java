@@ -9,7 +9,6 @@ public class UniPortalException extends RuntimeException {
 
     protected UniPortalException(String error) {
         super(error);
-        this.errorType = errorType;
     }
 
     protected UniPortalException(String errorType, short errorCode, String error) {

@@ -30,7 +30,6 @@ public class AuthenticationController extends BaseController {
 
     @PostMapping()
     public CompletableFuture<ApiReturn<AuthenticatedUser>> authenticate(@RequestBody Authentication authentication) { 
-        AuthenticatedUser authenticatedUser = this.authenticationService.authenticate(authentication);
-        return asyncResultOf(() -> authenticatedUser);
+        return asyncResultOf(() ->  (AuthenticatedUser) this.authenticationService.authenticate(authentication));
     }
 }

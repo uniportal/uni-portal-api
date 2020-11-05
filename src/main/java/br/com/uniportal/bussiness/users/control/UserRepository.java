@@ -16,7 +16,7 @@ public class UserRepository {
     public User getUserByLogin(String login) {
         var query = new Query().addCriteria(Criteria.where("login").is(login));
 
-        return mongoTemplate.findOne(query, User.class);
+        return mongoTemplate.findOne(query, User.class, "Users");
     }
 
 }

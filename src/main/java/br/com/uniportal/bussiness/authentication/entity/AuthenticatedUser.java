@@ -1,5 +1,6 @@
 package br.com.uniportal.bussiness.authentication.entity;
 import java.util.UUID;
+import org.bson.types.Binary;
 
 
 public class AuthenticatedUser {
@@ -7,7 +8,6 @@ public class AuthenticatedUser {
 
 	private String name;
     private String login;
-    private String password;
 
     public AuthenticatedUser() {}
     
@@ -28,9 +28,5 @@ public class AuthenticatedUser {
 
     public String getName() {
         return name;
-    }
-
-    public String getPassword() {
-        return password;
     }
 }
