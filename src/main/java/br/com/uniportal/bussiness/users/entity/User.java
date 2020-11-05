@@ -1,16 +1,16 @@
 package br.com.uniportal.bussiness.users.entity;
 
-import java.util.UUID;
+import org.bson.types.Binary;
 
 public class User {
-    private UUID id;
+    private Binary id;
     private String name;
     private String login;
     private String password;
     private PersonType personType;
     private ProfileType type;
 
-    public UUID getId() {
+    public Binary getId() {
         return id;
     }
     public String getLogin() {
