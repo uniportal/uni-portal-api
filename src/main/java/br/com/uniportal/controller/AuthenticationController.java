@@ -6,6 +6,7 @@ import java.util.concurrent.Executor;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,7 +30,7 @@ public class AuthenticationController extends BaseController {
     }   
 
     @PostMapping()
-    public CompletableFuture<ApiReturn<AuthenticatedUser>> authenticate(@RequestBody Authentication authentication) { 
-        return asyncResultOf(() -> (AuthenticatedUser) this.authenticationService.authenticate(authentication));
+    public CompletableFuture<AuthenticatedUser> authenticate(@RequestBody Authentication password) { 
+        return asyncResultOf(() -> (AuthenticatedUser) this.authenticationService.authenticate(password));
     }
 }

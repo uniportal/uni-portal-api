@@ -34,7 +34,7 @@ public class AuthenticationService {
         if (!this.validatePassword(authentication.getPassword(), user.getPassword()))
             throw UniPortalException.ofValidation("Senha inválida.");
         
-        return new AuthenticatedUser(user.getId(), user.getName(), user.getLogin());
+        return new AuthenticatedUser(user.getId(), user.getName(), user.getLogin(), user.getDocument());
     }
 
     public Boolean validatePassword(String password, String authenticatioPassword) {

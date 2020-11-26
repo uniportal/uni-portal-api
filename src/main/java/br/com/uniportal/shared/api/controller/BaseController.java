@@ -15,7 +15,7 @@ public class BaseController {
 		this.executor = executor;
 	}
 	
-	public <T> CompletableFuture<ApiReturn<T>> asyncResultOf(Supplier<T> supplier) {
-		return CompletableFuture.supplyAsync(() -> ApiReturn.of(supplier.get()), executor);
+	public <T> CompletableFuture<T> asyncResultOf(Supplier<T> supplier) {
+		return CompletableFuture.supplyAsync(() -> supplier.get(), executor);
 	}
 }

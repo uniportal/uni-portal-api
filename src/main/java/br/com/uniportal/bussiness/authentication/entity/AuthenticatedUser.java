@@ -7,13 +7,15 @@ public class AuthenticatedUser {
 
 	private String name;
     private String login;
+    private String document;
 
     public AuthenticatedUser() {}
     
-    public AuthenticatedUser(Binary id, String name, String login) {
+    public AuthenticatedUser(Binary id, String name, String loginm, String document) {
         this.id = id;
         this.name = name;
         this.login = name;
+        this.document = document;
     }
 
 
@@ -27,6 +29,10 @@ public class AuthenticatedUser {
 
     public String getName() {
         return name;
+    }
+
+    public String getDocument() {
+        return document;
     }
 
 }

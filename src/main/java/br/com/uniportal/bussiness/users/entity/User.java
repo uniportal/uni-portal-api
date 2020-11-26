@@ -5,6 +5,7 @@ import org.bson.types.Binary;
 public class User {
     private Binary id;
     private String name;
+    private String document;
     private String login;
     private String password;
     private PersonType personType;
@@ -27,5 +28,9 @@ public class User {
     }
     public ProfileType getType() {
         return type;
+    }
+
+    public String getDocument() {
+        return document;
     }
 }
